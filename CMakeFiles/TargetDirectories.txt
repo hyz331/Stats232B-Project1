@@ -1,0 +1,2 @@
+/Users/yunzhong/Study/Homework/stats232B/project1/Project1-AOGDetector/CMakeFiles/Entryd.dir
+/Users/yunzhong/Study/Homework/stats232B/project1/Project1-AOGDetector/CMakeFiles/RGM_Cored.dir

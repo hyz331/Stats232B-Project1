@@ -1,0 +1,104 @@
+                                 SYSTEM ENVIRONMENT
+
+Although RGM (it stands for Reconfigurable Grammar Model) is wriiten for cross-plathform use, 
+it is developed under Ubuntu 14.04 at the current stage because it is very easy to set up the 
+developing environment. We will test RGM for Windows OS and Mac OS in the future. 
+
+
+
+                                 ACKNOWLEDGEMENT
+
+In general, the code here is developed with the help from voc-release 5 
+by Dr. Ross Girshick and Prof. Felzenszwalb.
+The code for computing HOG features, FFT convolution and LBFGS is adapted 
+from FFLD by Dr. Charles Dubout <http://charles.dubout.ch/en/coding.html>. 
+We are grateful to them for make their codes publicly available.
+
+
+                                 
+                                 PREREQUISITES
+
+RGM requires that various libraries be available for use in the build procedure.
+  (* In Ubuntu 14.04, all the prerequisites can be installed using "Ubuntu Software Center"
+     and then you do not worry about compile them, except for the latest version of OpenCV.)
+
+Install all dependencies with CommandLine
+  sudo apt-get install build-essential cmake libboost1.55-all-dev libopencv-dev libeigen3-dev  libfftw3-dev graphviz
+
+CMake version 2.8 or later 
+  CMake is a family of tools designed to build, test and package software.
+  Download it at <http://www.cmake.org/>
+  CMake-gui is also recommended. 
+
+C++ Boost library 1.55
+  Boost provides free peer-reviewed portable C++ source libraries.
+  Download it at <http://www.boost.org/> and make sure it is accessible by 
+  your compiler.
+
+OpenCV version 2.4.9 or later
+  OpenCV is a open source computer vision library.
+  Download it at <http://opencv.org/downloads.html> and follow its instruction to compile and 
+  install it such that the it can be accessed by your compiler.
+  (To compile OpenCV 2.4.9 in Ubuntu 14.04, 
+   refere to http://karytech.blogspot.com/2014/05/opencv-249-on-ubuntu-1404.html)
+
+Eigen version 3.1 or later
+  Eigen is a C++ template library for linear algebra: matrices, vectors,
+  numerical solvers, and related algorithms.
+  Download it at <http://eigen.tuxfamily.org/> and make sure it is accessible by
+  your compiler.
+  
+
+Libfftw3f (or libfftw3 if the option RGM_USE_DOUBLE is on)
+  A C subroutine library for computing the discrete Fourier transform (DFT) in
+  one or more dimension, of arbitrary input size, and of both real and complex
+  complex data (as well as of even/odd data, i.e. the discrete cosine/sine
+  transforms or DCT/DST). 
+  
+
+OpenMP
+  An API for multi-platform shared-memory parallel programming in C/C++ and Fortran.
+  Found automatically using CMake FIND_PACKAGE(OpenMP).
+  Not required, but stronlgy recommended on multi-core systems to take
+  advantage of multithreading.
+  This is not only a library but also a compiler extension, so refer to your
+  compiler documentation for any information.
+
+GraphViz
+  Graphviz is open source graph visualization software. 
+  Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks.
+  Use to visualize the learned models in RGM.
+  Download it at <http://www.graphviz.org/>
+
+
+
+                                    BUILDING
+
+It is recommended to build the software in a separate directory. For example
+
+  cd <PATH_TO_RGM>
+  mkdir build
+  cd build
+
+Then use CMake to generate the necessary Makefiles (set CMAKE_BUILD_TYPE to Release or Debug)
+
+  cmake -DCMAKE_BUILD_TYPE=Release ..
+
+Then build the software with
+
+  make or make -j 8 (using multithread)
+
+Or, use CMake-gui to do this and use your c++ IDE (e.g., Qt creator) to build the code.
+
+After building, the executalbe "Entry" (release) or "Entryd" (debug) can be found 
+in <PATH_TO_BUILD>/bin.
+
+  cd <PATH_TO_BUILD>/bin
+  ./Entry <PATH_TO_RGM>/config/config.xml
+
+where you can modify config.xml for your usage
+
+
+
+
+                               

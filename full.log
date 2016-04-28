@@ -1,0 +1,10 @@
+[Entry.cpp] 000001: <normal>	Welcome to RGM-release 1.0
+[Entry.cpp] 000002: <normal>	Run Detection
+[Timer.cpp] 000003: <normal>	  Time usage: 
+    ReadConfig : 0.000000
+    LoadModel : 0.000000
+    VisualizeModel : 4.000000
+    ReadImage : 0.000000
+    InitFFTW : 8.000000
+    RunDetection : 7.000000
+

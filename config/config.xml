@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<opencv_storage>
+	<!-- Full path of a pretrained model, change the directory to your setting -->
+	<ModelFile>"preTrainedModel/voc2007/person_grammar_final.bin"</ModelFile>
+	<!-- Full path of a testing image, change the directory to your setting -->
+	<ImageFile>"testImages/000061.jpg"</ImageFile>
+	<!-- Visualize model: 1 yes, 0 no -->
+	<VisualizeModel>1</VisualizeModel>
+	<!-- The number of intervals per octave in the feature pyramid -->
+	<PyrInterval>10</PyrInterval>
+	<!-- Detection score threshold -->
+	<DetectionThreshold>-0.7</DetectionThreshold>
+	<!-- Threshold for non-maximum suppression -->
+	<NMSThreshold>0.5</NMSThreshold>
+</opencv_storage>
